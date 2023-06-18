@@ -1,0 +1,125 @@
+.section-book {
+  padding: 10rem 15rem;
+  background-image: linear-gradient(to right bottom,
+      rgba(126, 213, 111, 0.8),
+      rgba(40, 180, 133, 0.8));
+
+  .book {
+    background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(../img/nat-10.jpg);
+    background-size: 100%;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.3);
+    padding: 5rem;
+    height: 50rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    .book__form {
+      width: 50%;
+
+      .form {
+        .form-heading {
+          font-size: 3rem;
+          margin-bottom: 3rem;
+        }
+
+        .form__group {
+          margin-bottom: 1rem;
+
+          .form__input {
+            font-size: 1.5rem;
+            padding: 1.5rem 2rem;
+            border-radius: 2px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border: none;
+            font-family: inherit;
+            border-bottom: 3px solid transparent;
+            width: 80%;
+            display: block;
+            color: inherit;
+          }
+
+          .form__input:focus {
+            outline: none;
+            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+            border-bottom: 3px solid var(--color-primary);
+          }
+
+          .form__input:focus:invalid {
+            border-bottom: 3px solid var(--color-secondary-dark);
+          }
+
+          .form__label {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-left: 2rem;
+            margin-top: 0.7rem;
+            display: block;
+            transition: all 0.4s ease;
+          }
+
+          .form__input:placeholder-shown+.form__label {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-4rem);
+          }
+
+          .form__radio-group {
+            width: 49%;
+            display: inline-block;
+
+            .form__radio-input {
+              display: none;
+            }
+
+            .form__radio-label {
+              font-size: 1.6rem;
+              cursor: pointer;
+              display: flex;
+              align-items: center;
+              gap: 1rem;
+
+              .form__radio-button {
+                height: 3rem;
+                width: 3rem;
+                border: 5px solid var(--color-primary);
+                display: inline-block;
+                border-radius: 50%;
+                position: relative;
+              }
+
+              .form__radio-button::after {
+                content: "";
+                display: inline-block;
+                height: 1.3rem;
+                border-radius: 50%;
+                width: 1.3rem;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: var(--color-primary);
+                opacity: 0;
+              }
+            }
+
+            .form__radio-input:checked~.form__radio-label .form__radio-button::after {
+              opacity: 1;
+            }
+          }
+
+          .btn-green {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            margin-top: 3rem;
+            cursor: pointer;
+          }
+
+          .btn-green::after {
+            background-color: var(--color-primary);
+          }
+        }
+      }
+    }
+  }
+}

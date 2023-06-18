@@ -1,0 +1,178 @@
+.section-tours {
+  padding: 20rem 10rem;
+  background-color: var(--color-gray-light-1);
+  margin-top: -9rem;
+
+  .popular-tours {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 8rem;
+    margin-top: 6rem;
+
+    .container-1,
+    .container-2,
+    .container-3 {
+      width: 100%;
+      height: 52rem;
+      perspective: 150rem;
+
+      &:hover>.card {
+        cursor: pointer;
+        transform: rotateY(180deg);
+      }
+
+      .card {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transition: all 0.8s ease;
+        transform-style: preserve-3d;
+        box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
+
+        .front,
+        .back {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          backface-visibility: hidden;
+          border-radius: 3px;
+          overflow: hidden;
+        }
+
+        .front {
+          background-color: var(--color-white);
+
+          .card__picture {
+            background-size: cover;
+            height: 23rem;
+            background-blend-mode: screen;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+          }
+
+          .card__heading {
+            position: absolute;
+            font-size: 2.8rem;
+            color: var(--color-white);
+            text-transform: uppercase;
+            top: 12rem;
+            right: 2rem;
+            width: 75%;
+            font-weight: 300;
+            text-align: end;
+
+            .card__heading-span-1,
+            .card__heading-span-2,
+            .card__heading-span-3 {
+              padding: 1rem 1.5rem;
+              box-decoration-break: clone;
+              -webkit-box-decoration-break: clone;
+            }
+
+            .card__heading-span-1 {
+              background-image: linear-gradient(to right bottom,
+                  rgba(255, 185, 0, 0.85),
+                  rgba(255, 120, 48, 0.85));
+            }
+
+            .card__heading-span-2 {
+              background-image: linear-gradient(to right bottom,
+                  rgba(126, 213, 111, 0.8),
+                  rgba(40, 180, 133, 0.8));
+            }
+
+            .card__heading-span-3 {
+              background-image: linear-gradient(to right bottom,
+                  rgba(41, 152, 255, 0.8),
+                  rgba(86, 67, 250, 0.8));
+            }
+          }
+
+          .card__details {
+            padding: 1.6rem;
+
+            &>ul {
+              list-style: none;
+              width: 80%;
+              margin: 0 auto;
+
+              &>li {
+                text-align: center;
+                font-size: 1.6rem;
+                padding: 1rem;
+
+                &:not(:last-child) {
+                  border-bottom: 2px solid var(--color-gray-light-1);
+                  ;
+                }
+              }
+            }
+          }
+        }
+
+        .back {
+          transform: rotateY(180deg);
+          color: var(--color-white);
+
+          .card__cta {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            text-align: center;
+
+            .card__price-box {
+              margin-bottom: 8rem;
+
+              .card__price-only {
+                font-size: 1.4rem;
+                text-transform: uppercase;
+              }
+
+              .card__price-value {
+                font-size: 6rem;
+                font-weight: 100;
+              }
+            }
+          }
+        }
+
+        .back__background-1 {
+          background-image: linear-gradient(to right bottom,
+              rgb(255, 185, 0),
+              rgb(255, 120, 48));
+        }
+
+        .back__background-2 {
+          background-image: linear-gradient(to right bottom,
+              rgba(126, 213, 111, 0.8),
+              rgba(40, 180, 133, 0.8));
+        }
+
+        .back__background-3 {
+          background-image: linear-gradient(to right bottom,
+              rgba(41, 152, 255, 0.8),
+              rgba(86, 67, 250, 0.8));
+        }
+      }
+
+      .card__picture-1 {
+        background-image: url(../img/nat-5.jpg), linear-gradient(to right bottom,
+            rgba(255, 185, 0, 0.8),
+            rgba(255, 120, 48, 0.8));
+      }
+
+      .card__picture-2 {
+        background-image: url(../img/nat-6.jpg), linear-gradient(to right bottom,
+            rgba(126, 213, 111, 0.8),
+            rgba(40, 180, 133, 0.8));
+      }
+
+      .card__picture-3 {
+        background-image: url(../img/nat-7.jpg), linear-gradient(to right bottom,
+            rgba(41, 152, 255, 0.8),
+            rgba(86, 67, 250, 0.8));
+      }
+    }
+  }
+}
